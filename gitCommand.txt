@@ -26,3 +26,9 @@ git rm <fileName>							//从版本库中删除文件
 
 
 
+git remote add origin "远程仓库地址"		//已有的本地仓库与远程仓库关联
+git push -u origin master					//第一次把本地master分支推送至GitHub 填写用户名密码 
+git push origin master						//把本地master分支的最新修改推送至GitHub
+
+
+
