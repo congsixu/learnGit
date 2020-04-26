@@ -1,0 +1,27 @@
+注：<fileName>是文件名(相当于变量可变的)
+暂存区(stage 或者 index)
+
+git init  									//创建版本库
+git add <fileName> 							//把文件添加到仓库(添加到了暂存区)
+git commit -m "修改介绍注释(用英文)" 		//把文件提交到仓库
+git status									//查看仓库当前状态()
+git diff <fileName>							//顾名思义就是查看difference ,查看具体修改了什么内容
+git log										//查看历史记录  显示从最近到最远的提交日志
+
+//在Git中，用HEAD表示当前版本，也就是最新的提交1094adb...，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100
+git reset --hard HEAD^						//回退到上个版本 注意windows系统cmd控制台中换行符默认是^而^ 符号就被当做换行符而被git命令忽略掉了
+											解决办法：git reset --hard "HEAD^"   //加引号
+													git reset --hard HEAD^^  //加一个^
+													git reset --hard HEAD~ 或者 git reset --hard HEAD~1  //把^换成~，~ 后面的数字表示回退几次提交，默认是一次
+													
+git reset --hard 1094a(版本号)              //回退之后还可以回来(必须知道版本号)
+git reflog									//记录每一次命令(可以查到版本号)
+git checkout -- <fileName>					//丢弃工作区的更改   命令中的--很重要，没有--，就变成了“切换到另一个分支”的命令，我们在后面的分支管理中会再次遇到git checkout命令
+											把<fileName>文件在工作区的修改全部撤销，这里有两种情况：
+											1是<fileName>自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+											2是<fileName>已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+											
+git reset HEAD <fileName>					可以把暂存区的修改撤销掉（unstage），重新放回工作区
+
+
+
