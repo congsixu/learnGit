@@ -30,7 +30,17 @@ git remote add origin "远程仓库地址"		//已有的本地仓库与远程仓�
 git push -u origin master					//第一次把本地master分支推送至GitHub 填写用户名密码 
 git push origin master						//把本地master分支的最新修改推送至GitHub
 
+git branch									//查看分支
 
+git branch <name>							//创建分支
+
+git checkout <name>或者git switch <name>	//切换分支
+
+git checkout -b <name>或者git switch -c <name> //创建+切换分支
+
+git merge <name>							//合并某分支到当前分支
+
+git branch -d <name>						//删除分支
 
 
 
